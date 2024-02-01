@@ -6,6 +6,7 @@ mod debug;
 mod despawn;
 mod light;
 mod movement;
+mod schedule;
 mod spaceship;
 
 use asset_loader::AssetLoaderPlugin;
@@ -18,6 +19,7 @@ use debug::DebugPlugin;
 use despawn::DespawnPlugin;
 use light::LightPlugin;
 use movement::MovementPlugin;
+use schedule::SchedulePlugin;
 use spaceship::SpaceshipPlugin;
 
 fn main() {
@@ -31,6 +33,7 @@ fn main() {
         .add_plugins(MovementPlugin)
         .add_plugins(CollisionDetectionPlugin)
         .add_plugins(DespawnPlugin)
+        .add_plugins(SchedulePlugin)
         .add_plugins(DebugPlugin)
         .run()
 }
