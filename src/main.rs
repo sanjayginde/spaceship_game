@@ -4,10 +4,12 @@ mod camera;
 mod collision_detection;
 mod debug;
 mod despawn;
+mod health;
 mod light;
 mod movement;
 mod schedule;
 mod spaceship;
+mod states;
 
 use asset_loader::AssetLoaderPlugin;
 use asteroids::AsteroidsPlugin;
@@ -21,10 +23,12 @@ use light::LightPlugin;
 use movement::MovementPlugin;
 use schedule::SchedulePlugin;
 use spaceship::SpaceshipPlugin;
+use states::GameStatePlugin;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
+        .add_plugins(GameStatePlugin)
         .add_plugins(AssetLoaderPlugin)
         .add_plugins(CameraPlugin)
         .add_plugins(LightPlugin)
